@@ -5,7 +5,6 @@ pipeline {
         stage("1") {
             steps {
                 echo "Hello Florence"
-                echo "Webhook Trigger Works!"
             }
         }
     }
