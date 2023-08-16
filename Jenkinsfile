@@ -1,15 +1,32 @@
 pipeline {
-    agent any
+    agent {
+        label 'BuildandRelease'
+    }
+
+    tools {
+        maven "maven3.9.4"
+    }
 
     stages {
-        stage("1") {
+        stage("Build and Package") {
             steps {
-                echo "Hello Florence omoruyi"
-                echo "Hello Karl Onaiwu"
-                echo "come to my party tommorow"
-                echo "you are all invited too"
-                echo "I cannot make it to your party"
+                sh "mvn clean package"      //mvn clean + mvn package
             }
         }
+        stage("Static Code Analysis") {     //sonarqube
+            steps {
+                sh "mvn sonar:sonar"
+            }
+        }
+        stage("Backup to Artifactory") {    //nexus
+            steps {
+                sh "mvn deploy"
+            }
+        }
+        // stage("Deploy the Application") {
+        //     steps {
+                
+        //     }
+        // }
     }
 }
