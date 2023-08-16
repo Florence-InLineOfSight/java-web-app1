@@ -22,7 +22,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://184.72.116.112:9000/</sonar.host.url>
+		<sonar.host.url>http://172.31.81.2:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>2468</sonar.password> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -95,13 +95,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://3.83.52.60:8081/repository/java-web-app-1-releases/</url>
+	      <url>http://172.31.89.212:8081/repository/java-web-app-1-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.83.52.60:8081/repository/java-web-app-1-snapshots/</url>
+	      <url>http://172.31.89.212:8081/repository/java-web-app-1-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
