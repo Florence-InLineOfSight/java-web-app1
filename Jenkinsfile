@@ -5,7 +5,7 @@ pipeline {
 
     environment {
         IMAGE_TAG = "Default"
-        CONTAINER_NAME = "BELIEVE"
+        CONTAINER_NAME = "BELIEVE1"
         APP_PORT = 8080             // Port on server       APP_PORT:CONTAINER_PORT
         CONTAINER_PORT = 8080       // Port in container
     }
