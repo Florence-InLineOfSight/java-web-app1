@@ -38,8 +38,13 @@ pipeline {
         stage("Deploy the Application") {
             steps {
                 sh "docker build -t java-web-app1:${env.IMAGE_TAG} ." //Build image
-                sh "docker rm -f BELIEVE" //Delete old container
 
+                //Push Image to DockerHub
+                // sh 'docker login -u "florenceomoruyi" -p "YOURPASSWORDHERE"'
+                sh "docker tag java-web-app1:${env.IMAGE_TAG} florenceomoruyi/believe:${env.IMAGE_TAG}"
+                sh "docker push florenceomoruyi/believe:${env.IMAGE_TAG}"
+
+                sh "docker rm -f BELIEVE" //Delete old container
                 sh "docker run -d -p 8080:8080 --name BELIEVE java-web-app1:${env.IMAGE_TAG}" //Run container from Image
                 //deploy adapters: [tomcat9(credentialsId: 'f72e2a62-f1b1-4816-b85c-42ac10f9fa16', path: '', url: 'http://172.31.95.105:8080')], contextPath: null, war: 'target/BELIEVE.war'
             }
