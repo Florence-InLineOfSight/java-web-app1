@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'BuildandRelease'
+        label 'java_agent'
     }
 
     environment {
