@@ -1,0 +1,12 @@
+---
+version: "2"
+services:
+    :
+        container_name: java-web-app
+        build: .
+        ports:
+            - "8080:8080"
+        volumes:
+            - ./target/:/usr/local/tomcat/webapps/
+        networks:
+            - default
