@@ -1,9 +1,12 @@
 ---
-version: "2"
+version: '3'
 services:
-    :
-        container_name: java-web-app
-        build: .
+    java-web-app1:
+        container_name: java-web-app1
+        build:
+            context: .
+            dockerfile: Dockerfile
+            image: java-web-app1:newest
         ports:
             - "8080:8080"
         volumes:
