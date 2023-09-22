@@ -33,8 +33,8 @@ pipeline {
 
         stage("Deploy in Container") {
             steps {
-                sh "docker-compose build -f docker-compose-java"
-                sh "docker-compose up -d -f docker-compose-java --remove-orphans"
+                sh "docker-compose -f docker-compose-java build"
+                sh "docker-compose -f docker-compose-java up -d --remove-orphans"
             }
         }
 
