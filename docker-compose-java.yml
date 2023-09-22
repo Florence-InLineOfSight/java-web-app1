@@ -2,11 +2,11 @@
 version: '3'
 services:
     java-web-app1:
-        container_name: java-web-app1
+        image: java-web-app1:newest
         build:
             context: .
-            dockerfile: Dockerfile
-            image: java-web-app1:newest
+            dockerfile: Dockerfile-java
+        container_name: java-web-app1
         ports:
             - "8080:8080"
         volumes:
