@@ -24,12 +24,14 @@ pipeline {
                 sh "mvn sonar:sonar"
             }
         }
+
+/*
         stage("Backup to Artifactory") {    //nexus
             steps {
                 sh "mvn deploy"
             }
         }
-
+*/
 
         stage("Deploy in Container") {
             steps {
