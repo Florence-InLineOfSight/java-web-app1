@@ -37,6 +37,7 @@ pipeline {
             steps {
                 sh "docker-compose -f docker-compose-java.yml build"
                 sh "docker-compose -f docker-compose-java.yml up -d --remove-orphans"
+                sh "docker rmi -f $(docker images -aq)"
             }
         }
 
