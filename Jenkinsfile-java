@@ -18,7 +18,7 @@ pipeline {
             }
         }
 
-/*
+
         stage("Static Code Analysis") {     //sonarqube
             steps {
                 sh "mvn sonar:sonar"
@@ -29,7 +29,7 @@ pipeline {
                 sh "mvn deploy"
             }
         }
-*/
+
 
         stage("Deploy in Container") {
             steps {
